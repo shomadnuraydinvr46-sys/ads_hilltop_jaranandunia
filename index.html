@@ -1,0 +1,1249 @@
+<style>
+  .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    gap: 10px;
+    max-width: 100%;
+  }
+  .ads-slot {
+    width: 100%;
+    height: 250px; /* Sesuaikan ukuran */
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .ads-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .ads-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="ads-grid" id="adsGrid"></div>
+
+<script>
+  // Array berisi 100 script iklan berbeda
+  const adScripts = [
+    `<script>
+(function(xzsl){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xzsl || {};
+s.src = "\/\/fondstudy.com\/b\/XcVvs.dHG\/lE0\/YWWDce\/Ke\/mY9zuxZPUglQkaPnTnYa2TN\/ThM\/w_NBzmEMtLN\/j-YK1JMEzVAx3UMagd";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(st){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = st || {};
+s.src = "\/\/fondstudy.com\/b\/XQVgs.d\/G\/lC0SYzWQck\/Qe\/mc9\/uiZ\/UFlVk-PvTfYa2dNjTUM\/wpNOziUttiNXjnYy1yMIz\/AH3\/N\/gc";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(cxffq){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cxffq || {};
+s.src = "\/\/fondstudy.com\/buXCVgs\/d.GhlZ0zYtWgcx\/Ce_m\/9pu\/ZfUYlJk\/PUT\/Yb2oNyTjMGwfNBzykwtQN\/jbYT1EMLzDAy4cMqAS";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(lfrxin){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = lfrxin || {};
+s.src = "\/\/fondstudy.com\/bEXdV.sndpGIlm0iYJWPcP\/Se\/mr9qucZTUyljkHPLT\/Yf2\/NUTwMwwsOrDVMVtRNdj\/Y\/1mMDzMAQ4fNeAT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>>`,
+    `<script>
+(function(tqg){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = tqg || {};
+s.src = "\/\/fondstudy.com\/b_XBVYszd.GUl\/0jYNWecN\/DevmW9DuqZlUZlEkyP\/TEYM2\/NmTRMiw\/OyTNEwt\/N-jOY\/1qM\/zfA\/5lMtgS";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(irbhha){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = irbhha || {};
+s.src = "\/\/fondstudy.com\/bWXaVOsvd.GElH0\/Y\/Woc_\/ZeDmr9Ru\/ZqUJlnkoP\/THYO2nNqTRMTwWO\/TpkwtNNLjcYB1XMBzuEowQMYAV";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(bvx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = bvx || {};
+s.src = "\/\/fondstudy.com\/blXeV.sRdUGzlX0hY\/WKcd\/iemmd9yudZUUdlAk\/PcT\/Yi2jNeT-MhxCMHD\/MrtKN\/jPYh1NMxzTEVw\/NxAN";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(cqrc){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cqrc || {};
+s.src = "\/\/fondstudy.com\/b.XaVEs\/dHG\/l\/0hY\/WPc-\/_e-m\/9NudZIUglQkkPeTfYM2MNcTQMrxUMXT\/EvtiNGj\/Yx1uMYzAETxcMvgV";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(mpmo){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mpmo || {};
+s.src = "\/\/fondstudy.com\/baX.VcsjdxGnlV0YYNWscK\/keemo9QuRZCUVlpkbPSTfYQ2-NATXMOxCMETNUatRN\/jiYg1MMJztE\/x\/N-gm";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(ooozy){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = ooozy || {};
+s.src = "\/\/fondstudy.com\/b\/XXVjsod.G\/lz0tYyWQcf\/keMmE9_uvZOUQl\/kvPhTmYY2\/NWTaMzxKMdT\/kXt\/NMjsYW1oMZzQEuyxMTAn";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xrrx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xrrx || {};
+s.src = "\/\/fondstudy.com\/boXAVLsOd.GFl-0PY\/Wmci\/dewmo9_u\/ZnUSl\/krP\/TLYU2zNlT\/MLxrM\/jScjtaN\/jzYh1rMDzME\/yTOTAk";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xnqm){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xnqm || {};
+s.src = "\/\/fondstudy.com\/b\/X\/V.sHd-GNlB0YYFWKcK\/PeSmc9\/u\/ZWUhl\/kZP\/ThYy2aNRToM\/xYMqzJULtyNpj-Y\/1CMQzJEZzXNbgh";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(aurgx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = aurgx || {};
+s.src = "\/\/fondstudy.com\/b\/X\/V\/s.dgGMlG0fY\/WScB\/OeEmd9ruGZnUolYkkPCTdYK2kNzThMgx\/N\/TeYHtXNtjEYj1cM\/z\/El1mNhwY";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(pvp){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = pvp || {};
+s.src = "\/\/fondstudy.com\/bfX.VWsbdgGElJ0sY\/WJcD\/LeNmo9XuyZjUxlDksPVT\/Yp2qNETXMnxVN-jfAvtFNxjlYw1-MazKEs2JM\/QQ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(yoov){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yoov || {};
+s.src = "\/\/fondstudy.com\/bQXGVqsid.Gol\/0GYGW\/cS\/feAmN9\/u\/ZlUhlFkNPqTbYj2oNOTFMJxQN\/j\/QutqNsjrYc1OMrzwEd2eNbQR";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(owxs){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = owxs || {};
+s.src = "\/\/fondstudy.com\/bOXUVfs.dlGClm0\/YiWpcW\/Xeym-9pu\/Z\/UplWkWPtTxYy2tNUTZM\/xqNpjUg\/tfNmjzY-1VMrzfEh2\/OlQI";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(zbrog){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = zbrog || {};
+s.src = "\/\/fondstudy.com\/b.X\/V\/shd\/Grlj0\/YfWhcF\/PeHm-9uufZfUOlykkPbT\/Y\/2mNxTuMyxDN\/z\/Q\/tQNWjhYV1eM\/zAEr3dNtQt";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(shijj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = shijj || {};
+s.src = "\/\/fondstudy.com\/bxXeVXsNd.GAlE0eY\/W\/cB\/xeTmx9mugZEUWl\/kuPCTHYJ2\/NuTkMtxIN_zZgHtqNyjKYT1mMVzWE\/3VOHQc";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(hvnv){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = hvnv || {};
+s.src = "\/\/fondstudy.com\/b.XLVpsNdyGZl_0fYrWxcJ\/Ie\/mJ9oukZ\/UqlqkWPAT\/YJ2zNhT\/MqxCO\/DhQ\/tVNrj\/YS1\/MRzGEE4jNEQP";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(loj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = loj || {};
+s.src = "\/\/fondstudy.com\/blXmV.sSdHG_lV0-YsWScr\/KeNm\/9quNZYUAlVk\/PCTBYW2ENLTtMdxXOMD-g\/tNN\/jmYo1rM\/znEH4\/OcQD";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(slwvs){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = slwvs || {};
+s.src = "\/\/fondstudy.com\/bzX.VlsNdBGRl\/0SY\/WVcJ\/qeUm\/9\/uEZfU_lNkqPJT\/YE2aNWTUMnx\/O-TtYitUNQjKY\/1WMCzPEI5\/N\/wF";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(otos){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = otos || {};
+s.src = "\/\/fondstudy.com\/b\/X.VDsYdxGElj0-YWWLcF\/FeXmt9DueZBUilekrPjTdYo2NNZTEMTyVMpDEQMt_NKjvY\/1nMtzTIfwqN\/Qz";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(sbpfo){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = sbpfo || {};
+s.src = "\/\/fondstudy.com\/b.XgVisSdcG-l\/0XYQWZcO\/NeymJ9auaZ\/UHljk\/PPT\/Ym2eNPTNMey\/MoTpUrt\/NajbYl1vM\/zsIvxsNQgA";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(dfjjc){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = dfjjc || {};
+s.src = "\/\/fondstudy.com\/b.XqVQsqdvGHlq0nYZW\/cr\/Xe\/mD9\/uKZ\/UxlKk-PxTbYZ2XNQT-MgyjMNjrQ\/tPNPjJYV1YMdz\/I\/ytNDQu";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(srwu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = srwu || {};
+s.src = "\/\/fondstudy.com\/b\/XyVjs.dgGvlj0xY\/WCcq\/ge\/mC9xuHZ\/UslPkZPpT\/YQ2LNiTxMnyAMhjjg-t\/NdjVYa1WMZz\/IBy\/O\/Ql";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(jcnfnhw){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jcnfnhw || {};
+s.src = "\/\/fondstudy.com\/blXKV_s.dGG\/lt0yY\/WTcv\/OeFmD9CuGZtU\/lpkQPxTbYZ2mNxT\/MeytMyz\/IWt\/N\/jrYi1QMfzGIBz\/Mrws";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(tohj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = tohj || {};
+s.src = "\/\/fondstudy.com\/bRXPV\/shd.GBlw0LYIWZcV\/Henm\/9Uu\/ZNUjl_kJP_TFYL2\/NHTFMtyKM\/zMYrtZNojCYQ1FMSzpI\/z\/N\/wD";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(mdf){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mdf || {};
+s.src = "\/\/fondstudy.com\/bqX\/V_s.dgG\/lL0TYxWpca\/gehmv9uuKZ\/UhlrkQP\/TUYn2uNbTjM\/yINvDIQutENYjyY\/1PMlzxI\/0LNcQU";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(iof){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = iof || {};
+s.src = "\/\/fondstudy.com\/bpXlV.s\/d\/GYlF0dYqWYcX\/Ie\/mA9BuiZkUvl\/krP\/TeY\/2aNQT\/MmydNsD\/g\/tQNyjRYE1AMyzRIn0_OJQR";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(kj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = kj || {};
+s.src = "\/\/fondstudy.com\/blXrVts_d.Gglw0qYcW\/ci\/xenmv9audZwU\/lrkgP\/TFYF2uNtTWMcyANxTII_tkNxjKYt1QMTzzIG1xMfwJ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(tdm){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = tdm || {};
+s.src = "\/\/fondstudy.com\/bUXMV\/s.d\/GLlm0LY\/WOcY\/neAmd9XuNZ_UNlak\/P\/T\/YZ2iN\/TcMTyANtTDYytiNjjaYG1iMKz\/IX1LNWw_";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(ni){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = ni || {};
+s.src = "\/\/fondstudy.com\/b\/XGVWs.dYG\/lW0-Y\/WFcS\/fermG9TuUZ\/Upl\/k\/P\/TUYJ2\/NeT\/MuyCNwjkAltrNQjoYB1\/MyzzI\/2\/M\/Qf";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(pripy){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = pripy || {};
+s.src = "\/\/fondstudy.com\/bgXaVSs-d.GNl\/0bYKWxcP\/fefm\/9\/u\/ZIU\/lIkyPdTIYP2\/NiTyM\/y\/NBjzQfttNCj\/Ys1pMtzoIO2cN_Qk";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(bjkks){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = bjkks || {};
+s.src = "\/\/fondstudy.com\/bkXDVhs.d_Gplf0fYlWtcl\/weUmE9UuWZxUml\/k\/PKTFYQ2RNlTiM\/yANCjhgZtWNHj\/Yj1HMzzQIq2_OLQY";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(pti){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = pti || {};
+s.src = "\/\/fondstudy.com\/bGXfV.sqdhGYlP0\/Y\/WIca\/deHmc9ZuSZgUflVkOP\/T_Ym2\/NRT_MKy\/N\/zDI\/tKNXj\/Yf1EMRzwIb3\/Mzwm";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(wytlw){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = wytlw || {};
+s.src = "\/\/fondstudy.com\/bVXdV.skdNGmlj0\/YUWdcB\/aeVmT9QubZ\/UXlDkqPiT\/Yp2_N-TZMhyoN-zAY\/t\/NEjIYt1iMOzYIF3RNrwW";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(fygew){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = fygew || {};
+s.src = "\/\/fondstudy.com\/b\/XnV.s\/duGclA0HYcWLcI\/JeDm-9QuzZcU\/lRkBPvTvYC2zNVTkMeyAOjD\/AKt\/NDjmYP1MMqzxIt4QMUQI";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(bldmh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = bldmh || {};
+s.src = "\/\/fondstudy.com\/b.X\/VysYdcGwln0JYrWXcE\/ZeMmt9CuPZHUQlok\/P_TOYW2LNfTpMFybO\/DVQCtSNgjpY\/1zM\/z\/IE4XNLQA";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(aysadg){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = aysadg || {};
+s.src = "\/\/fondstudy.com\/boXTVCs.dXGZl\/0KYSWscC\/oeQmx9puRZVUwlwkiPvT\/Yp2WNATvMHyTOvDKg-tXNUjrYU1YMGz\/IC4zOmQK";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(snuo){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = snuo || {};
+s.src = "\/\/fondstudy.com\/bmX\/V.sDdOGklC0xYbW\/cr\/oeLmt9TuLZRUIlAkzPTTRYC2KNUTzM_yZOuTcQ\/tANrjqYC1\/M_z\/IT5\/NMQv";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(afu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = afu || {};
+s.src = "\/\/fondstudy.com\/b.XsV\/s\/ddGzln0yYqW_cb\/heSmO9\/uaZuUNljkfP\/T\/Y\/2-NzTuMJyJO\/T\/gJt\/NHjdYl1jMxzrIl5\/O\/QY";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(alq){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = alq || {};
+s.src = "\/\/fondstudy.com\/bFX\/Vbsnd.Grlz0kYmWFcM\/permr9DuKZ-UulpkZPyTDY\/2RNbT\/MEzvMiDVIgtiN\/j-YP1HMxzaMYwEMjwX";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(jnhn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jnhn || {};
+s.src = "\/\/fondstudy.com\/bDXlVos.d-G\/l\/0AY\/WFcs\/mehm\/9\/u\/ZjUZlikXPNT\/Ys2bNHTTM_zgMdDMgkt\/NMjGYk1cM\/zEM\/waOiQe";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(godw){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = godw || {};
+s.src = "\/\/fondstudy.com\/b.XHVKs\/d\/GalB0xYgWWcg\/BeWmf9IuBZQUAlbkePdT\/Yo2_NoT\/MMz_MUTJI\/tiNljvYb1xMCzeM\/x\/Mbwp";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(rwxn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = rwxn || {};
+s.src = "\/\/fondstudy.com\/bmXpVksyd.GjlN0-Y\/WccW\/heemz9EuvZvUkl\/kZPDTAY\/2jNyToM\/zSMETDYWtAN\/jpY\/1pMYzGMOxNNlwP";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xekmdjm){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xekmdjm || {};
+s.src = "\/\/fondstudy.com\/baXGV.s\/ddGclR0rYyWncd\/geCm\/9_uzZJU\/l\/kCPvTYYL2ENqTZM\/zGM\/jhQXtaNtjeYs1-MxzDMGy\/N\/Qa";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(vllwm){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = vllwm || {};
+s.src = "\/\/fondstudy.com\/b.XBV\/s\/d\/Gula0-Y\/Wfcf\/qeImi9\/u_Z\/UglNkkPBT\/YN2ENJTSMjzVMLjvgCtYN\/jcY\/1oMSz\/M_yJOlQt";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(jfkhs){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jfkhs || {};
+s.src = "\/\/fondstudy.com\/bOXEV_spd.GUlD0\/YpWocy\/MeZmn9dusZlUAlIkmPzTsYL2rNiTPMhzqM\/zgQStNNAjKYc1iMMzfMbznN\/QA";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(evjd){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = evjd || {};
+s.src = "\/\/fondstudy.com\/bGXXVIs.d\/G\/le0gY\/WqcE\/Dexm\/9\/uRZpUgl\/kIPJT\/Yu2RNcTqMGz-N\/DiIQt\/NDj\/YG1\/M\/zRMo0FMcwZ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(vpr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = vpr || {};
+s.src = "\/\/fondstudy.com\/b\/XGVRs.dqGrla0RY_WKcc\/Jedmk9UuEZwUKl\/klP\/TaYb2dNOTeM\/zNN\/DTYftTNjjdYY1KMpzgMj0-NRwS";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(uxx){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = uxx || {};
+s.src = "\/\/fondstudy.com\/bgXeVAsfd.GOlo0_YpWCcr\/Neamf9_uHZ\/UflDkzPRToYR2_N\/TjMFz\/NOTNAbt\/N\/jdYd1\/MVzWM\/1oMuQx";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(uezjla){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = uezjla || {};
+s.src = "\/\/fondstudy.com\/bJX.V\/sud\/GNlg0dYZWwcj\/yeCmf9huzZQUTlXkkPrT\/Y\/2ZNETDM\/zvNkT-QGtRN-jGYP1RMKz\/Mr1ONhQH";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(zsj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = zsj || {};
+s.src = "\/\/fondstudy.com\/b\/X.VQsHdtGPll0-YDWkcx\/Gelm\/9Gu\/ZxUklQk\/PlTbY_2ENuTbMZzINRTfgrtSNLjjYo1yMEzOMX1nOeQG";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(wjj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = wjj || {};
+s.src = "\/\/fondstudy.com\/bQXRVEs.dUGRla0pYcWHcE\/OeCmb9LuzZ-UblYkPP\/TKYg2_NQTbMFzJNLjIIBt\/Nij\/YJ1lMqz\/MU2aMnwM";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(udqvs){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = udqvs || {};
+s.src = "\/\/fondstudy.com\/bHXUVls\/d.Gild0\/YaWKcu\/Fe\/mw9bujZQU\/lrkEPXTUY\/2NN\/TqMCzuNzjWYTtUN-jUYU1zM_zYMW2ENawC";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(dyavag){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = dyavag || {};
+s.src = "\/\/fondstudy.com\/b.XdVGs-dWGCll0GY_W\/cE\/ye\/mo9KuRZPUdlNkBPjTxYc2cNPTqMuzBNfzkQDtuNxjyYC1xMXzjM\/3HNvQB";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(swuheg){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = swuheg || {};
+s.src = "\/\/fondstudy.com\/b.XrVXsFduG-li0RYSW\/cw\/keJmU9Hu\/ZRUzlNkJPzTRY\/2ONDTxMdzeNFzngjtjN_jeYM1kM\/z\/MC3\/ODQe";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(hcskeu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = hcskeu || {};
+s.src = "\/\/fondstudy.com\/bIXpV\/sCd.G\/ln0PYBWkcx\/jehmP9vudZuUIl\/kpPhT\/Yw2vN-T\/MHzcOrDjIztzNYjxY\/1TMFzoML4\/MWwH";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(nkiib){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = nkiib || {};
+s.src = "\/\/fondstudy.com\/bDX.VKs\/d\/GJlr0tYsWjcb\/Bevm\/9ouqZyU-lVkWPYTwYD2NNxTVM_z\/OkDAgIt\/NJj\/Y\/1\/M\/zDMv4XOeQG";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(zexxa){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = zexxa || {};
+s.src = "\/\/fondstudy.com\/bYXHVsscd.G\/l\/0CY-Wccs\/Ve\/mO9buYZCUslakIPDTdYh2HN\/TUMCzdOWTkIitTN\/jkYl1yM\/zCMD5WMuwg";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xbf){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xbf || {};
+s.src = "\/\/fondstudy.com\/brX.V\/sQdgGSlQ0\/YPWZcE\/ce\/m-9zuYZkU\/lMk-PeTDYc2sNpT\/M-0jMVD\/AWt\/N\/jpYY1\/MPzTQswZMvQC";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(emnh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = emnh || {};
+s.src = "\/\/fondstudy.com\/bbX\/V.sdddGklM0\/YdWocZ\/beZme9DuCZyUEl\/k_PUTgYv2UNFTVM-0UMCD\/Q\/tTNqjFYQ1sMkz\/Q\/wkNBQy";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(zkuu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = zkuu || {};
+s.src = "\/\/fondstudy.com\/b-XGVEs.dXGBlO0eYxWRcZ\/WeomP9du\/ZIU\/lDkrPGT\/Y\/2\/NJTDM\/0tMFDUg\/t\/NwjqYf1rMNzjQ\/wYOsQL";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(ozbe){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = ozbe || {};
+s.src = "\/\/fondstudy.com\/bwXGV.sjd\/Gvly0RY\/WZcF\/Iekm\/9JuMZmUxlvktPTTRYp2iN\/T\/Mg0wMmT\/I_tANPjCYo1sM\/z-QRxzMjwr";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(avel){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = avel || {};
+s.src = "\/\/fondstudy.com\/bcXzV.s\/d\/G\/l\/0oYnWCcG\/feWmv9ouiZZUvlvkZPKTuYj2DNETKMq0zMATIYjtoNAjuYU1QMhzkQ\/xbNmwD";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(cfsn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cfsn || {};
+s.src = "\/\/fondstudy.com\/b.XPV\/sFdqGXlN0SYWW\/cE\/Xe\/mt9PuvZ-UBlLkMPoTdYT2uNlThMS0OMvjSABt\/NGjdYn1iM\/z\/QUywMWQT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(jbfwn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jbfwn || {};
+s.src = "\/\/fondstudy.com\/bGX\/VWs.dIGplM0rYMWuc-\/zePmO9vuFZEUtlokOPWTaYs2\/NpTcMS0\/MBjsQPtdNNj\/Y\/1fMlzvQsyhNRQA";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(hyn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = hyn || {};
+s.src = "\/\/fondstudy.com\/bQX\/Vis.dPGPlu0hY\/WgcV\/-eLmu9GunZDUnlrkEPdT\/Y_2wNuTPMv0pMAjogytxN\/jdYK1\/MKzCQqymOfQR";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(qqfq){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = qqfq || {};
+s.src = "\/\/fondstudy.com\/bjX.VhsDdqGflt0gYGWZcb\/Zefmr9GudZGUwlJkCP\/T-YV2ON\/TAMV0\/MvzkIHtzNejlYN1gM\/zgQCzEMDw-";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(mgud){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mgud || {};
+s.src = "\/\/fondstudy.com\/b\/XgVQs.dlGslw0\/YhW\/cD\/ye\/mT9LuWZPU\/lok\/PPTtYn2YN\/TiMz0IM\/zxY\/tkNCjaYq1\/MezTQsz\/NhwC";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(yqwr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yqwr || {};
+s.src = "\/\/fondstudy.com\/bzXrVcs.dJG\/l\/0\/Y\/W-cb\/Oeamt9ruMZNUrljktPBTIYW2YNzTYMC0nNWDDAWtFNEjaYq1LMazbQu0HMQQs";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(wzyn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = wzyn || {};
+s.src = "\/\/fondstudy.com\/b.X\/V\/sndZGely0HYrWMci\/Eeim\/9hu_ZEUmlQkcPrTsYs2HNbT\/M\/0ENcD\/QmtQN\/joYT1SMtzSQD0eN-Qi";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>>`,
+    `<script>
+(function(lgyvh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = lgyvh || {};
+s.src = "\/\/fondstudy.com\/bAX.V\/sMdxGVli0zYuWScr\/reUmT9JuUZnU\/ltkeP\/TGY\/2\/N\/TqMW0eNaDlg\/tQNajbYD1cM\/zDQv0-OWQK";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(fbhn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = fbhn || {};
+s.src = "\/\/fondstudy.com\/b.X-VZsKdIG\/lT0SYkWpcA\/ie_m\/9ou\/ZGU\/l\/kpPUTBY\/2iNbTLMz0lNNTpIxtBN_jgY\/1XMtzKQA1VM\/wY";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(bjefn){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = bjefn || {};
+s.src = "\/\/fondstudy.com\/bqXlVSshd.GIlR0vYyW\/cm\/QeemW9CuwZuU\/ljkWPaTTYv2TNGTbMP0gNhTYY-t_N\/jyYO1fMMzuQV1jN-ww";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(qydiu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = qydiu || {};
+s.src = "\/\/fondstudy.com\/bnXpV.sCd_Gqlv0CY\/WRcM\/leOm\/9hunZDUElskFPTT\/YV2LNbT\/Mj0DNCjIAet\/Ncj\/Y\/1hMhz\/Q-2_MMQu";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xronbr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xronbr || {};
+s.src = "\/\/fondstudy.com\/b.XpVHs\/dgGilJ0GYOW\/cg\/uesmb9\/uQZiUNlLkvPmTBYP2\/NpT\/My0-NrjDY\/tON\/jOYX1YMbzDQ\/2FNYwW";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(xxbb){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = xxbb || {};
+s.src = "\/\/fondstudy.com\/bYX.VbsedlGvl\/0DYYWdcc\/qeHm_9\/uAZNUClWkjPwTmYX2\/NWTYMp0eNGzSAOtsNMj\/Y\/1BMPz\/Qf3PMNQz";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(mrkt){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mrkt || {};
+s.src = "\/\/fondstudy.com\/b.XuV\/shdzG\/lI0UYVWccR\/FeRmg9Gu\/ZcUYlPk\/PtTiYO2TNuTaMc0\/NqzKQEtqN_jOY-1NMZzWQJ3PNTQK";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(pcrjnc){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = pcrjnc || {};
+s.src = "\/\/fondstudy.com\/bSX.VNs\/dfGQle0zYKWMcs\/heymM9XurZ_Uqlsk\/PlTIYD2\/N\/T\/Mk0bN\/z\/gktBNOjgYw1\/MGzxQB3\/OZQB";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(azk){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = azk || {};
+s.src = "\/\/fondstudy.com\/bfX_VJssd.G\/l\/0_YdW\/cC\/Fermk9fuPZAU\/ldkQPvTnYT2SN\/TYMY0IOIDcQztHNNjDY\/1LMpzDQV4XNOQ_";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(glgh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = glgh || {};
+s.src = "\/\/fondstudy.com\/bUX.VbssdHGSll0HY\/Wrci\/Eefmj9euXZoUolvk\/PKTzY\/2jNHTrM-0uOrDAgEtfNnjIYl1LMczeQ\/4FOTQc";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(tbjp){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = tbjp || {};
+s.src = "\/\/fondstudy.com\/bfX\/Vms.dnG\/ln0\/YLWjcn\/Ie\/mS9juZZ\/U\/l\/k\/PoTJYk2UNqTyMO0AOITyYotZN-jQYb1\/MTzBQ-5yNZwa";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(nvzs){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = nvzs || {};
+s.src = "\/\/fondstudy.com\/b_XxV\/s.d-Gklp0\/YUWPci\/PeHmM9\/umZUU\/lrkuPCTUYM2eNyTGMX1\/MMD-I\/ttNljhYO1TMXzYUOwJMQwv";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(nict){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = nict || {};
+s.src = "\/\/fondstudy.com\/b.X\/V\/sidJGllX0PYUWmcV\/KeTm\/9oupZ\/U_llk\/PeT\/YI2RNETaMg1wMiDhgjt-NCjxYJ1XMez\/UqwaObQf";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(ehmh){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = ehmh || {};
+s.src = "\/\/fondstudy.com\/bAX.VosPdhGdl\/0zY\/Wbcv\/besmh9IubZTUOlPk\/PSTTYk2FNKTvMp1oMFTPYKtoNAjOYQ1JMCz_U\/xWNxwZ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(zqyf){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = zqyf || {};
+s.src = "\/\/fondstudy.com\/b\/XwVdsBd.GFld0bYYW\/cQ\/eebmZ9\/uzZiU_lIkmP\/T\/YX2WNVTbMa1KMXjwALtBNojZY\/1\/M-zsUxy\/M\/QE";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(vgtdg){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = vgtdg || {};
+s.src = "\/\/fondstudy.com\/bzX.VCsYdtGJlO0HYuWHci\/Fe\/mr9CuiZjUXlkk\/PrTMYS2xN\/TYMa1FMLj\/QUtGNKjeYE1KMqz\/U\/yyNgQY";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(axe){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = axe || {};
+s.src = "\/\/fondstudy.com\/bcX.V-spdDG_lq0wYIWCce\/aeOmk9xu\/ZaUNlHk\/PlTAY-2EN\/TlMi1kMUzCAatNNJjPYL1sMazVU\/zMMqQi";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(yhpof){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yhpof || {};
+s.src = "\/\/fondstudy.com\/b.XjVcsbdaGMlt0\/YYWnci\/ue\/mZ9VuLZDU\/l\/k\/PsToY\/2ENzT\/M\/1\/NaD\/Abt_Ndj-Y\/1mMdzgUi0\/MkQE";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(yfj){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yfj || {};
+s.src = "\/\/fondstudy.com\/b.X\/Vcs\/dGGol-0iYFWBcX\/DeWmR9YufZ\/U\/l-kUPMTKYy2tNGTAMP1jNNDAQetKNijwYD1CM\/zXUS0XNkQF";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(nfqpl){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = nfqpl || {};
+s.src = "\/\/fondstudy.com\/b.XuVNsadGGWlp0ZYqWTcx\/Xelmr9QuSZ\/Uvlkk\/P\/THYE2vNMTUMS1\/NCDQgqtqNvjzY\/1\/M\/z-UY0DO\/Qo";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(cpl){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cpl || {};
+s.src = "\/\/fondstudy.com\/bqXdVAsSd.GMlq0PYBWncX\/oeJm\/9-uvZFUglEkcPiTqYe2\/N\/TfMC1jN\/TXYWtcNWjYYl1-MVz\/UK1DNFwO";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(yswsc){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yswsc || {};
+s.src = "\/\/fondstudy.com\/bGX.VHsEd\/GVlC0YYsWAcP\/SeTmC9huvZxUklCkuPQTIYZ2xN\/TzM\/1MN\/jUAntdNljgYH1XMVzFUF2\/MBQQ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(iub){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = iub || {};
+s.src = "\/\/fondstudy.com\/bzXpV.szdnGklH0rYWW\/cC\/VexmD9\/uWZiUVlfkvPOTGYR2RN\/TqMC1ENSjhQdtvNGj\/Ys1SMZz\/Ud2yN_QF";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(bru){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = bru || {};
+s.src = "\/\/fondstudy.com\/bJXIV\/s.dOGGlY0RYVWCcL\/IeWmt9tupZ\/U\/lBk\/PeTWYD2oN_TvMm1\/NTjlg\/tVNijCYF1\/MfzUUY2oOlQd";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(alncrq){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = alncrq || {};
+s.src = "\/\/fondstudy.com\/b_X.VPsSd\/GulM0CYKWgce\/Pehm\/9suEZIUKlskqPATQYL2aN\/T-M\/1\/NSzxI\/tyN\/jHY\/1aMyzbUV3BMmwr";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(hdfi){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = hdfi || {};
+s.src = "\/\/fondstudy.com\/baX.VFsZd\/GwlU0uYDWncf\/xegmg9SuSZNUalwkwPjTXYR2-NwTpM_1\/NqzcYWtSNEj\/Y_1mMMzGUR3xN\/wJ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(qnyi){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = qnyi || {};
+s.src = "\/\/fondstudy.com\/b.XgV\/skdnG_lv0fYbWScT\/teomR9\/u\/ZEUhlykfPrTXYS2CNuTvMc1LOoD_A\/tVNNjSYx1DMrzgUi4BMLQm";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`,
+    `<script>
+(function(djw){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = djw || {};
+s.src = "\/\/fondstudy.com\/b.X\/VhsZd\/GPls0sY\/WpcQ\/Cefm\/9-u\/Z\/U-lskBPfT\/YS2rNGTuM\/1GOND\/gjtwNwjNYb1tMmzsUH4cOBQs";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>`
+  ];
+
+  const adsGrid = document.getElementById("adsGrid");
+
+  adScripts.forEach((adCode, i) => {
+    const slot = document.createElement("div");
+    slot.className = "ads-slot";
+    slot.innerHTML = adCode || `Slot kosong #${i+1}`;
+    adsGrid.appendChild(slot);
+  });
+</script>
